@@ -1,0 +1,370 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* cursor: none !important; */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+.css-rd8qnz-MuiPaper-root-MuiAppBar-root{
+  /* position: unset !important; */
+}
+
+.css-1bhn4nu-MuiPaper-root-MuiAppBar-root{
+  position: static !important;
+  z-index: -0 !important;
+}
+
+.card {
+  width: 190px;
+  background: #ffffff;
+  padding: 2rem 1.5rem;
+  transition: box-shadow .3s ease, transform .2s ease;
+ }
+ 
+ .card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform .2s ease, opacity .2s ease;
+ }
+ 
+ /*Image*/
+ .card-avatar {
+  --size: 60px;
+  background: linear-gradient(to top, #f1e1c1 0%, #fcbc97 100%);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  transition: transform .2s ease;
+  margin-bottom: 1rem;
+ }
+ 
+ 
+ /*Card footer*/
+ .card-social {
+  transform: translateY(200%);
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  opacity: 0;
+  padding-left: 0px;
+  transition: transform .2s ease, opacity .2s ease;
+ }
+ 
+ .card-social__item {
+  list-style: none;
+ }
+ 
+ .card-social__item svg {
+  display: block;
+  height: 18px;
+  width: 18px;
+  fill: #515F65;
+  cursor: pointer;
+  transition: fill 0.2s ease ,transform 0.2s ease;
+ }
+ 
+ /*Text*/
+ .card-title {
+  color: #333;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 2rem;
+ }
+
+ 
+ .card-subtitle {
+  color: #3c3f40;
+  font-size: 0.8em;
+ }
+ 
+ /*Hover*/
+ .card:hover {
+  box-shadow: 0 8px 50px #23232333;
+  background-color: #7520be;
+ }
+
+ .card:hover  .card-title {
+    color: white;
+ }
+
+ .card:hover  .card-subtitle {
+  color: white;
+}
+ .card:hover .card-info {
+  transform: translateY(-5%);
+ }
+ 
+ .card:hover .card-social {
+  transform: translateY(100%);
+  opacity: 1;
+ }
+ 
+ .card-social__item svg:hover {
+  fill: #232323;
+  transform: scale(1.1);
+ }
+ 
+ .card-avatar:hover {
+  transform: scale(1.1);
+ }
+
+ .card-social__item{
+    color: white;
+ }
+
+ .card-social__item svg {
+  fill: white;
+}
+
+.button {
+  --color: #ffffff;
+  font-family: inherit;
+  display: inline-block;
+  width: 6em;
+  height: 2.6em;
+  line-height: 2.5em;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 20px;
+  font-size: 17px;
+  z-index: 1;
+  color: var(--color);
+  border: 2px solid var(--color);
+  border-radius: 6px;
+  position: relative;
+}
+
+.button::before {
+  position: absolute;
+  content: "";
+  background: var(--color);
+  width: 150px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.button:hover {
+  color:orange;
+  transition: 0.9s all;
+}
+
+.button:before {
+  top: 100%;
+  left: 100%;
+  transition: 0.3s all;
+}
+
+.button:hover::before {
+  top: -30px;
+  left: -30px;
+}
+
+.css-8yvas4-MuiTypography-root-MuiBreadcrumbs-root{
+  color: #DDE4FF !important;
+  font-weight: 900;
+}
+
+
+/* Gallery */
+
+.cardGallery {
+  width: 330px;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardGallery::before {
+  content: "";
+  width: 330px; 
+  height: 0px;
+  position: absolute;
+  top:0;
+  background-color: rgba(0,0,0,0.7);
+  transition: all 0.5s ease;
+}
+
+.cardGallery * {
+  z-index: 1;
+}
+
+
+.cardGallery:hover::before {
+  width: 330px;
+  height: 210px;
+  border-bottom: none;
+  transform: scale(0.95);
+}
+
+.serachIcon1{
+   display: none;
+   transition:0.9s;
+}
+
+
+.cardGallery:hover .serachIcon1{
+   display: block;
+   transition:0.9s;
+   transform:skew(0.5);
+}
+
+
+
+.MuiBox-root .css-l2l7py{
+  height: 220px;
+}
+
+.MuiBox-root .css-f49o7i{
+  height: 220px;
+}
+
+.MuiBox-root .css-9p8jqz{
+  height: 220px;
+}
+
+
+@media (max-width: 380px){
+
+  .cardGallery {
+    width: 280px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cardGallery:hover::before {
+    width: 280px;
+    height: 180px;
+    border-bottom: none;
+    transform: scale(0.95);
+  }
+
+  .cardGallery::before {
+    content: "";
+    width: 280px; 
+    height: 0px;
+    position: absolute;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all 0.5s ease;
+  }
+
+
+}
+
+
+.buttons {
+  --color: #ffffff;
+  font-family: inherit;
+  display: inline-block;
+  width: 20em;
+  height: 4em;
+  line-height: 2.5em;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 20px;
+  font-size: 17px;
+  z-index: 1;
+  color: var(--color);
+  border: 2px solid var(--color);
+  position: relative;
+}
+
+.buttons::before {
+  position: absolute;
+  content: "";
+  background: var(--color);
+  width: 300px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.buttons:hover {
+  color:orange;
+  transition: 0.9s all;
+}
+
+.buttons:before {
+  top: 0px;
+  left: 250px;
+  transition: 0.3s all;
+  width: 1000px;
+  height: 1000px;
+  rotate: 170deg;
+}
+
+.buttons:hover::before {
+  top: -100px;
+  left: -200px;
+}
+
+.buttonc {
+  background-color: #ffffff;
+  border: 1px solid white; /* Default border is hidden */
+  border-radius: 0.5rem;
+  color: #111827;
+  width: 100px;
+  height: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.buttonc:hover {
+  background-color: #f9fafb;
+}
+
+.buttonc:active {
+  border: 2px solid #D1E0EF;
+}
+
+.buttonc:focus {
+  outline: none; 
+}
+
+.buttonc:focus-visible {
+  box-shadow: none; 
+}
+
+
