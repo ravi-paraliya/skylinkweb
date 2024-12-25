@@ -1,5 +1,5 @@
 import { Box, Typography,Grid, Container,Button } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -17,8 +17,48 @@ import DesktopWindowsOutlinedIcon from '@mui/icons-material/DesktopWindowsOutlin
 import GroupsIcon from '@mui/icons-material/Groups';
 import InsertChartOutlinedRoundedIcon from '@mui/icons-material/InsertChartOutlinedRounded';
 import { useNavigate } from 'react-router-dom';
+import CountUp from 'react-countup';
+import { useInView } from "react-intersection-observer";
+import AddIcon from '@mui/icons-material/Add';
 
 function Whoteprovid() {
+
+  // const [startCounting, setStartCounting] = useState(false);
+  // const statsRef = useRef(null);
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setStartCounting(true);
+  //       }
+  //     },
+  //     { threshold: 0.5 } 
+  //   );
+
+  //   if (statsRef.current) {
+  //     observer.observe(statsRef.current);
+  //   }
+
+  //   return () => {
+  //     if (statsRef.current) {
+  //       observer.unobserve(statsRef.current);
+  //     }
+  //   };
+  // }, []);
+
+  const [startCounting, setStartCounting] = useState(false);
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger only once
+    threshold: 0.5, // Trigger when 50% of the element is in view
+  });
+
+  // Update the state when the element is in view
+  React.useEffect(() => {
+    if (inView) {
+      setStartCounting(true);
+    }
+  }, [inView]);
 
   const navigate = useNavigate()
   return (
@@ -34,6 +74,7 @@ function Whoteprovid() {
                        <Box sx={{display:"flex", justifyContent:"center",pt:"20px"}}>
                            <Typography  sx={{border:"3px solid #FFA61B",width:"100px"}}></Typography>
                        </Box>
+
 
 
                <Grid item container xs={12} sx={{display:"flex" , justifyContent:"center"}}>
@@ -281,9 +322,11 @@ function Whoteprovid() {
                                  </Box>
 
                                  <Box >
-                                      <Box sx={{display:"flex",justifyContent:"center"}}>
-                                        <Typography sx={{fontSize:"35px",pt:"10px",fontWeight:"800"}}>9,250 +</Typography>
-                                     </Box>
+                                   <Box ref={ref} sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "70px", }} >
+                                       <Typography sx={{ fontSize: "35px",fontWeight:"800"}}>
+                                          {startCounting ? <CountUp end={9412} duration={2} /> : "0"}  +
+                                       </Typography>
+                                   </Box>
                                  </Box>
 
                                  <Box >
@@ -306,9 +349,11 @@ function Whoteprovid() {
                                  </Box>
 
                                  <Box >
-                                      <Box sx={{display:"flex",justifyContent:"center"}}>
-                                        <Typography sx={{fontSize:"35px",pt:"10px",fontWeight:"800"}}>1,250 +</Typography>
-                                     </Box>
+                                 <Box ref={ref} sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "70px", }} >
+                                       <Typography sx={{ fontSize: "35px",fontWeight:"800"}}>
+                                          {startCounting ? <CountUp end={1250} duration={2} /> : "0"}  +
+                                       </Typography>
+                                   </Box>
                                  </Box>
 
                                  <Box >
@@ -330,9 +375,11 @@ function Whoteprovid() {
                                  </Box>
 
                                  <Box >
-                                      <Box sx={{display:"flex",justifyContent:"center"}}>
-                                        <Typography sx={{fontSize:"35px",pt:"10px",fontWeight:"800"}}>8,500 +</Typography>
-                                     </Box>
+                                 <Box ref={ref} sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "70px", }} >
+                                       <Typography sx={{ fontSize: "35px",fontWeight:"800"}}>
+                                          {startCounting ? <CountUp end={8500} duration={2} /> : "0"}  +
+                                       </Typography>
+                                   </Box>
                                  </Box>
 
                                  <Box >
@@ -355,8 +402,10 @@ function Whoteprovid() {
                                  </Box>
 
                                  <Box >
-                                      <Box sx={{display:"flex",justifyContent:"center"}}>
-                                        <Typography sx={{fontSize:"35px",pt:"10px",fontWeight:"800"}}>18 +</Typography>
+                                      <Box ref={ref} sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "70px", }} >
+                                       <Typography sx={{ fontSize: "35px",fontWeight:"800"}}>
+                                          {startCounting ? <CountUp end={18} duration={2} /> : "0"}  +
+                                       </Typography>
                                      </Box>
                                  </Box>
 
@@ -371,7 +420,6 @@ function Whoteprovid() {
                  </Grid>
 
              </Grid>
-
              </Container>
                 
          </Box>
