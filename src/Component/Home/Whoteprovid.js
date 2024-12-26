@@ -324,7 +324,7 @@ function Whoteprovid() {
                                  <Box >
                                    <Box ref={ref} sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "70px", }} >
                                        <Typography sx={{ fontSize: "35px",fontWeight:"800"}}>
-                                          {startCounting ? <CountUp end={9412} duration={2} /> : "0"}  +
+                                          {startCounting ? <CountUp end={9250} duration={2} /> : "0"}  +
                                        </Typography>
                                    </Box>
                                  </Box>

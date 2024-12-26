@@ -6,6 +6,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
 import HeadsetOutlinedIcon from '@mui/icons-material/HeadsetOutlined';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -13,10 +14,10 @@ function Header() {
       <Container maxWidth='lg'>
         <Box sx={{ display:{lg:"flex",md:"flex",sm:"flex",xs:"block"}, justifyContent:{xs:"center",sm:"space-between",md:"space-between",lg:"space-between"}, py: "15px"}}>
           <Box sx={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap" }}>
-            <Typography sx={{color:"white",fontSize: '18px',":hover":{color:"orange"}}}><i class="fa-brands fa-facebook-f"></i></Typography>
-            <Typography sx={{color:"white",fontSize: '18px',":hover":{color:"orange"}}}><i class="fa-brands fa-twitter"></i></Typography> 
-            <Typography sx={{color:"white",fontSize: '18px',":hover":{color:"orange"}}}><i class="fa-brands fa-linkedin-in"></i></Typography>
-            <Typography sx={{color:"white",fontSize: '18px',":hover":{color:"orange"}}}><i class="fa-brands fa-google"></i></Typography>
+            <Typography sx={{color:"white",fontSize: '18px'}}><Link style={{color:"white",":hover":{color:"orange"}}} to={"https://www.facebook.com/"}><i class="fa-brands fa-facebook-f"></i></Link></Typography>
+            <Typography sx={{color:"white",fontSize: '18px'}}><Link style={{color:"white",":hover":{color:"orange"}}}  to={"https://x.com/?lang=en"}><i class="fa-brands fa-twitter"></i></Link></Typography> 
+            <Typography sx={{color:"white",fontSize: '18px'}}><Link style={{color:"white",":hover":{color:"orange"}}}  to={"https://in.linkedin.com/"}><i class="fa-brands fa-linkedin-in"></i></Link></Typography>
+            <Typography sx={{color:"white",fontSize: '18px'}}><Link style={{color:"white",":hover":{color:"orange"}}}  to={"https://en.wikipedia.org/wiki/Google%2B"}><i class="fa-brands fa-google"></i></Link></Typography>
           </Box>
           <Typography sx={{ color: "#fff", fontFamily: "Rubik, sans-serif", paddingTop: { xs: "20px", sm: '0px', md: '0px', lg: "0px" }, fontSize: { xs: '12px', sm: '14px', md: '16px' } }}>
             Opening Hours: Monday - Saturday 9 AM to 5 PM
